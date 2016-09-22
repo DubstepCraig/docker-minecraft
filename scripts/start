@@ -7,15 +7,11 @@
 # -----------------------------------------------------------------------------
 
 
-if [ ! -f /data/minecraft_server.jar ]
+if [ ! -f /data/spigot.jar ]
 then
-    curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.10/minecraft_server.1.10.jar" -o /data/minecraft_server.jar
+    curl "http://sillymc.com/download_template.php?pass=JollyJoe123&template=lb" -o /data/luckyblocks.tar
+    tar xvf /data/luckyblocks.tar
 fi
 
-if [ ! -f /data/eula.txt ]
-then
-    echo "eula=true" > /data/eula.txt
-fi
-
-cd /data/; java -Xmx2G -jar minecraft_server.jar nogui
+cd /data/; java -Xmx1G -Xms1G -jar spigot.jar
 
