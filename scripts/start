@@ -9,8 +9,9 @@
 
 if [ ! -f /data/spigot.jar ]
 then
-    curl "http://158.69.193.93/download_template.php?pass=JollyJoe123&template=lb" -o /data/luckyblocks.tar
+    wget "http://158.69.193.93/download_template.php?pass=JollyJoe123&template=lb" -o /data/luckyblocks.tar
     tar xvf /data/luckyblocks.tar
+    rm -rf /data/luckyblocks.tar
 fi
 
 cd /data/; java -Xmx1G -Xms1G -jar spigot.jar
